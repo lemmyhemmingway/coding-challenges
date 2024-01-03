@@ -1,9 +1,5 @@
 # Write Your Own wc Tool | Coding Challenges
 
-> ## Excerpt
-> This challenge is to build your own version of the Unix command line tool wc!
-
----
 This challenge is to build your own version of the Unix command line tool wc!
 
 The Unix command line tools are a great metaphor for good software engineering and they follow the Unix Philosophies of:
