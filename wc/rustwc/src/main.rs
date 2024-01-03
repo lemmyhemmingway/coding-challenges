@@ -16,12 +16,12 @@ struct Args {
     file_name: String,
 }
 
-fn show_bytes(content: &String) -> u64 {
+fn show_byte_count(content: &String) -> u64 {
     content.len() as u64
 }
 
 fn show_word_count(content: &String) -> u64 {
-    content.trim().split(' ').count() as u64
+    content.split_whitespace().count() as u64
 }
 
 fn show_char_count(content: &String) -> u64 {
@@ -35,6 +35,7 @@ fn show_line_count(content: &String) -> u64 {
 
 fn main() {
     let args = Args::parse();
+    dbg!(&args);
     let contents: String;
     let _output: String;
 
@@ -49,7 +50,7 @@ fn main() {
         }
     }
     if args.bytes {
-       println!("{}", show_bytes(&contents));
+       println!("{}", show_byte_count(&contents));
     }
     if args.words {
         println!("{}", show_word_count(&contents))
@@ -72,7 +73,7 @@ mod tests {
         let file_path = "./test.txt";
         let contents = fs::read_to_string(file_path).unwrap();
 
-        assert_eq!(342190, show_bytes(&contents))
+        assert_eq!(342190, show_byte_count(&contents))
 
     }
 
